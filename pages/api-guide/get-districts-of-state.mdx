@@ -1,0 +1,84 @@
+import { Tab, Tabs } from "nextra-theme-docs";
+
+# Get All Districts/Cities Of State
+
+Technical details regarding the usage of the state endpoint can be found below. This endpoing provides all the districts which are found in provided state. Example code is provided for both JavaScript and Python, along with a response schema.
+
+## Route Schema (URL)
+
+
+```
+http://localhost:3000/state/district/{state_name}
+
+```
+
+
+## Path Parameters
+
+| Parameters |   Type    |                                     Description                                          | Required? | Default |
+|:----------:|:-------: |:----------------------------------------------------------------------------: |:--------: |:------:|
+| state_name    |  String  | The state_name path parameter; i.e. the state for which cities / districts you are looking for |     Yes    |    ""   |
+
+
+## Request Samples
+
+<Tabs items={["JavaScript", "Python"]}>
+  <Tab>
+    <>
+        ```js copy 
+        import axios from "axios";
+
+        // Using the example state_name is maharashtra, and looking at the results.
+        const url = "http://localhost:3000/state/district/maharashtra";
+        const data = async () => {
+            try {
+                const { data } = await axios.get(url);
+                return data;
+            } catch (err) {
+                throw new Error(err.message);
+            }
+        };
+
+        console.log(data);
+        ```
+    </>
+
+  </Tab>
+  <Tab>
+    <>
+        ```python copy 
+        import requests
+
+        # Using the example state_name is maharashtra, and looking at the results.
+        url = "http://localhost:3000/state/district/maharashtra";
+        response = requests.get(url)
+        data = response.json()
+
+        print(data)
+        ```
+    </>
+
+  </Tab>
+</Tabs>
+
+
+## Response Schema
+
+
+<Tabs items={["200 OK"]}>
+  <Tab>
+    **MIME Type:** `application/json`
+    ```json copy=false /String/1
+    [district_1:String, district_2:String, district_3:String,....]
+    ```
+  </Tab>
+  <Tab>
+    **MIME Type:** `application/json`
+    ```json 
+    {
+        "message": "Invalid pincode kindly check your pincode and try again"
+    }
+    ```
+
+  </Tab>
+</Tabs>

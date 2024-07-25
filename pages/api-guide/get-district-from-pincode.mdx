@@ -1,0 +1,87 @@
+
+import { Tab, Tabs } from "nextra-theme-docs";
+
+## Get District From Pincode
+
+Technical details regarding the usage of the pincode endpoint to get district of which given pincode belongs to can be found below. Example code is provided for both JavaScript and Python, along with a response schema.
+
+## Route Schema (URL)
+
+
+```
+http://localhost:3000/pincode/{pincode}/district
+
+```
+
+
+## Path Parameters
+
+| Parameters |   Type    |                                     Description                                          | Required? | Default |
+|:----------:|:-------: |:----------------------------------------------------------------------------: |:--------: |:------:|
+| pincode    |  Integer  | The pincode path parameter; i.e. the pincode for which info you are looking for |     Yes    |    ""   |
+
+
+## Request Samples
+
+<Tabs items={["JavaScript", "Python"]}>
+  <Tab>
+    <>
+        ```js copy 
+        import axios from "axios";
+
+        // Using the example pincode 411057, and looking at the results.
+        const url = "http://localhost:3000/pincode/411057/district";
+        const data = async () => {
+            try {
+                const { data } = await axios.get(url);
+                return data;
+            } catch (err) {
+                throw new Error(err.message);
+            }
+        };
+
+        console.log(data);
+        ```
+    </>
+
+  </Tab>
+  <Tab>
+    <>
+        ```python copy 
+        import requests
+
+        # Using the example pincode 411057, and looking at the results.
+        url = "http://localhost:3000/pincode/411057/district";
+        response = requests.get(url)
+        data = response.json()
+
+        print(data)
+        ```
+    </>
+
+  </Tab>
+</Tabs>
+
+
+## Response Schema
+
+
+<Tabs items={["200 OK", "400 NOT_FOUND"]}>
+  <Tab>
+    **MIME Type:** `application/json`
+    ```json copy=false
+    {
+         "district": String
+    }
+    ```
+  </Tab>
+  <Tab>
+    **MIME Type:** `application/json`
+    ```json 
+    {
+         "district": null
+    }
+    ```
+
+  </Tab>
+</Tabs>

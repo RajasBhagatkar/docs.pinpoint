@@ -1,0 +1,17 @@
+{
+    "index": "Introduction",
+    "contact": {
+        "title": "Contact ✉️",
+        "type": "page",
+        "href": "mailto:rajasbhagatkar01@gmail.com",
+        "newWindow": true
+    },
+    "feedback": {
+        "type": "page",
+        "title": "FeedBack",
+        "display": "hidden",
+        "theme": {
+            "typesetting": "article"
+        }
+    }
+}

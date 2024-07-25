@@ -1,0 +1,78 @@
+import { Tab, Tabs } from "nextra-theme-docs";
+
+## Get All States Of India
+
+
+
+Technical details regarding the usage of the pincode endpoint can be found below. Example code is provided for both JavaScript and Python, along with a response schema.
+
+## Route Schema (URL)
+
+
+```
+http://localhost:3000/state
+
+```
+
+## Request Samples
+
+<Tabs items={["JavaScript", "Python"]}>
+  <Tab>
+    <>
+        ```js copy 
+        import axios from "axios";
+
+        // Using the example and looking at the results.
+        const url = "http://localhost:3000/state";
+        const data = async () => {
+            try {
+                const { data } = await axios.get(url);
+                return data;
+            } catch (err) {
+                throw new Error(err.message);
+            }
+        };
+
+        console.log(data);
+        ```
+    </>
+
+  </Tab>
+  <Tab>
+    <>
+        ```python copy 
+        import requests
+
+        # Using the example and looking at the results.
+        url = "http://localhost:3000/state";
+        response = requests.get(url)
+        data = response.json()
+
+        print(data)
+        ```
+    </>
+
+  </Tab>
+</Tabs>
+
+
+## Response Schema
+
+
+<Tabs items={["200 OK", "400 NOT_FOUND"]}>
+  <Tab>
+    **MIME Type:** `application/json`
+    ```json copy=false
+    [state_1, state_2, state_3,.....]
+    ```
+  </Tab>
+  <Tab>
+    **MIME Type:** `application/json`
+    ```json 
+    {
+        "state": null
+    }
+    ```
+
+  </Tab>
+</Tabs>
