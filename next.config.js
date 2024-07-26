@@ -2,7 +2,8 @@
 const nextConfig = require('nextra')({
   reactStrictMode: true,
   theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.jsx'
+  themeConfig: './theme.config.jsx',
+  output: 'export',
 })
 
 module.exports = nextConfig()
