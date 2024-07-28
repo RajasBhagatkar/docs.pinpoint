@@ -18,6 +18,17 @@ export default {
     },
     feedback: {
         useLink: () => "/feedback"
-    }
+    },
+    head: function useHead() {
+        const description =
+          "A collection of documentation for PinPoint API. Find out how to efficiently use the PinPoint Pincode API here!";
+        return (
+          <>
+            <meta httpEquiv="Content-Language" content="en" />
+            <meta name="description" content={description} />
+            <meta name="og:description" content={description} />
+          </>
+        );
+      },
     // ... other theme options
 }
