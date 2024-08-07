@@ -8,7 +8,7 @@ Technical details regarding the usage of the state endpoint can be found below. 
 
 
 ```
-https://tasteless-lari-person-project-41fd5ca1.koyeb.app/state/district/{state_name}
+http://pinpoint.devildesk.wip.la/state/district/{state_name}
 
 ```
 
@@ -29,7 +29,7 @@ https://tasteless-lari-person-project-41fd5ca1.koyeb.app/state/district/{state_n
         import axios from "axios";
 
         // Using the example state_name is maharashtra, and looking at the results.
-        const url = "https://tasteless-lari-person-project-41fd5ca1.koyeb.app/state/district/maharashtra";
+        const url = "http://pinpoint.devildesk.wip.la/state/district/maharashtra";
         const data = async () => {
             try {
                 const { data } = await axios.get(url);
@@ -50,7 +50,7 @@ https://tasteless-lari-person-project-41fd5ca1.koyeb.app/state/district/{state_n
         import requests
 
         # Using the example state_name is maharashtra, and looking at the results.
-        url = "https://tasteless-lari-person-project-41fd5ca1.koyeb.app/state/district/maharashtra";
+        url = "http://pinpoint.devildesk.wip.la/state/district/maharashtra";
         response = requests.get(url)
         data = response.json()
 
