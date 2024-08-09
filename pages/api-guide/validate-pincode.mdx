@@ -8,7 +8,7 @@ Technical details regarding the usage of the pincode validation endpoint can be 
 
 
 ```
-http://pinpoint.devildesk.wip.la/pincode/{pincode}/validate
+https://pinpoint.devildesk.wip.la/pincode/{pincode}/validate
 
 ```
 
@@ -29,7 +29,7 @@ http://pinpoint.devildesk.wip.la/pincode/{pincode}/validate
         import axios from "axios";
 
         // Using the example pincode 411057, and looking at the results.
-        const url = "http://pinpoint.devildesk.wip.la/pincode/411057/validate";
+        const url = "https://pinpoint.devildesk.wip.la/pincode/411057/validate";
         const data = async () => {
             try {
                 const { data } = await axios.get(url);
@@ -50,7 +50,7 @@ http://pinpoint.devildesk.wip.la/pincode/{pincode}/validate
         import requests
 
         # Using the example pincode 411057, and looking at the results.
-        url = "http://pinpoint.devildesk.wip.la/pincode/411057/validate";
+        url = "https://pinpoint.devildesk.wip.la/pincode/411057/validate";
         response = requests.get(url)
         data = response.json()
 
